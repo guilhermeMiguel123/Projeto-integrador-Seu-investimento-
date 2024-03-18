@@ -1,0 +1,16 @@
+def calcular_valor_futuro(investimento, taxa_juros, anos):
+    if anos == 0:
+        return investimento
+    else:
+        return calcular_valor_futuro(investimento * (1 + taxa_juros), taxa_juros, anos - 1)
+
+# Solicitar informações ao usuário
+investimento_inicial = float(input("Digite o valor inicial do investimento: "))
+taxa_juros_anual = float(input("Digite a taxa de juros anual (em decimal): "))
+anos = int(input("Digite o número de anos do investimento: "))
+
+# Calcular o valor futuro do investimento
+valor_futuro = calcular_valor_futuro(investimento_inicial, taxa_juros_anual, anos)
+
+# Exibir o resultado
+print("O valor futuro do investimento após", anos, "anos será de:", valor_futuro)
